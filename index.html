@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Freedom Calculator App</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Freedom Calculator App">
+  <meta name="author" content="Moshe Rechtman">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/js/slides" 
+    src="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Freedom Calculator App</h1>
+    <h2>Developing Data Products / Johns Hopkins University - Data Science Specialization (Coursera)</h2>
+    <p>Moshe Rechtman<br/>21/03/2015</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>App Introducing</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Freedom Calculator aim is to encourage the user to achieve economic independence and early retirement   in a short time compared to the legal retirement age. By completing five variables, the App presents a graph showing the amount of accumulated savings and the time needed for the desired retire. An interesting point is that no matter the size of the income but the percentage of monthly savings affects the time it takes to retire. Therefore adaptation modest lifestyle away from the consumer culture will promote this goal much faster than the average person&#39;s image.
+If this field raises interest and excitement, you can find it on ERE on the WEB.</p>
+
+<p>some embedded R code ...</p>
+
+<pre><code class="r">1+1
+</code></pre>
+
+<pre><code>## [1] 2
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Using the App</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1>The Application has 5 Variables:</h1>
+
+<ul>
+<li><p>Initial saving amount: Initial capital, getting started amount of money</p></li>
+<li><p>Monthly net income   : Net monthly income after taxes</p></li>
+<li><p>Monthly Expenses     : Fixed monthly expenses (in present and future) </p></li>
+<li><p>Annual yield         : Expected rate in the investment portfolio , risk level Measurement </p></li>
+<li><p>Annual withdrawal    : Percentage annual withdrawal from retirement savings. Those who want to go on the safe side can change to 3 -3.5 %</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Basic assumptions</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>To build such a model some assumptions must to be taken. It is important to note that even if the assumptions are not precise, they are good enough to provide reference points for the amount of time needed for the desired retirement.</p>
+
+<ol>
+<li><p>Monthly Expenses- Fixed monthly amount spent during and after retirement, </p></li>
+<li><p>Annual yield-  This Application is directed for passive investment strategy and it assumes an average annual return of 7.5% and 2.5% of shares and bonds, for long-term investment.</p></li>
+<li><p>Flexibility to changes- Life is not a mathematical model, so model variables are expected to constantly change, therefore the App encourages the user to perform sensitivity analyzes and there is always the possibility of discounting the savings and reposition the data.</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Model Description</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Monthly saving amount + Initial capital = amount required for retirement</p>
+
+<p>Monthly saving amount :
+\((Monthly Savings Amount)*((1+ Annual Yield)^n - 1))/ Annual Yield\)</p>
+
+<p>Initial capital :
+\((Initial Saving Amount) * (1+ Annual Yield)^n\)  </p>
+
+<p>Amount required for retirement:
+\((Monthly Savings Amount *12) / Withdrawal\)</p>
+
+<p>a  &lt;- \(( expenses *12 / withdrawal + savings *12 / Yield)\)<br>
+ \(*( Yield /(Retirement Amount * Yield + savings *12))\)</p>
+
+<p>\(b  <-  (1+yield)\)</p>
+
+<p>Years for Retirment = \(LEN(a/b)\)</p>
+
+<p>To try the app click <a href="http://datapresent.shinyapps.io/dataProduct">here</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='App Introducing'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Using the App'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Basic assumptions'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Model Description'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
